@@ -16,3 +16,6 @@ npm install firebase@9.16.0
 npm run build
 firebase deploy
 > https://developer-7.web.app
+
+## kakaotalk js app key
+"9a5e0ed16471154f7c6c045a32d772ee"

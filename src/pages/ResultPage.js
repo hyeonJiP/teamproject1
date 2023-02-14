@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import Parser from "html-react-parser";
 
+
 import results from "./contents/results";
 
 const Wrapper = styled.div`
