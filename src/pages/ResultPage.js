@@ -61,7 +61,7 @@ const ResultSquare = styled.div`
 
   ${ResultImg} {
     justify-content: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     bottom: ${(props) => (props.isNormal < 16 ? "32rem" : "14rem")};
   }
 
