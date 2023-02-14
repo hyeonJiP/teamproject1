@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ButtonComponent from "../components/ButtonComponent";
 import contents from "./contents/questions";
@@ -126,6 +126,43 @@ function QuizPage({ isShow }) {
     setQuestionNum(questionNum + 1);
   };
 
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => document.body.removeChild(script);
+  }, []);
+
+  const shareToKatalk = () => {
+    // kakao sdk script 부른 후 window.Kakao로 접근
+    if (window.Kakao) {
+      const kakao = window.Kakao;
+
+      // 중복 initialization 방지
+      // 카카오에서 제공하는 javascript key를 이용하여 initialize
+      if (!kakao.isInitialized()) {
+        kakao.init("9a5e0ed16471154f7c6c045a32d772ee");
+      }
+
+      kakao.Link.sendDefault({
+        objectType: "feed",
+        content: {
+          title: "나와 어울리는 개발자 유형 찾기",
+          description: "내 안의 개발자 본능을 찾아서..",
+          imageUrl:
+            "이미지 주소",
+          link: {
+            mobileWebUrl:
+              "https://developer-7.web.app/",
+            webUrl:
+              "https://developer-7.web.app/",
+          },
+        },
+      });
+    }
+  };
+
   if (questionNum === 12) {
     return (
       <>
@@ -136,6 +173,12 @@ function QuizPage({ isShow }) {
         <Wrapper isShow={isProcess}>
           <Container>
             <Text>테스트 완료! </Text>
+            <div className='SocialBtn'>
+              <li className='KakaoBtn'>카카오톡</li>
+              <li className='TweetBtn'>트위터</li>
+              <li className='FacebookBtn'>페이스북</li>
+              <li className='LinkBtn'>링크</li>
+            </div>
           </Container>
         </Wrapper>
       </>

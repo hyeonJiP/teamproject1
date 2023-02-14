@@ -1,5 +1,11 @@
 @import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css');
 
+*{
+  text-decoration: none;
+  list-style: none;
+}
+
+
 body {
   margin: 0;
   padding: 0;
