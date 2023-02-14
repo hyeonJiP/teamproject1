@@ -11,3 +11,8 @@ npm i html-react-parser <br/>
 
 ## firebase 버전 지정 설치
 npm install firebase@9.16.0
+
+## 자료 수정 후 firebase update
+npm run build
+firebase deploy
+> https://developer-7.web.app

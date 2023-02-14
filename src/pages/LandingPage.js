@@ -117,14 +117,8 @@ function LandingPage() {
                     <Button>
                         <DataTitle>참여자 수</DataTitle>
                         <DataNumber>0</DataNumber>
-                    </Button>
+                    </Button>  
                 </Data>
-                {/* <div className='SocialBtn'>
-                    <li className='KakaoBtn'>카카오톡</li>
-                    <li className='TweetBtn'>트위터</li>
-                    <li className='FacebookBtn'>페이스북</li>
-                    <li className='LinkBtn'>링크</li>
-                </div> */}
             </Wrapper>
             <QuizPage isShow={isQuizShow} />
         </>
