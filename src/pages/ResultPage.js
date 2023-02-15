@@ -12,14 +12,14 @@ import LinkCopyBtn from "../assets/btn/btn_link.svg";
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
+  height: 100%;
   background-color: ${(props) => props.backgroundColor};
-
   flex-direction: column;
   align-items: center;
 `;
 
 const Container = styled.div`
-  margin-top: 8.6rem;
+  margin-top: 7rem;
   margin-bottom: 3rem;
 `;
 
@@ -49,7 +49,9 @@ const Content = styled.div`
   position: absolute;
   font-family: "Spoqa-Han-Sans";
   font-size: 1.4rem;
+  line-height: 2.3rem;
   color: black;
+  margin-bottom: 0.5rem;
 `;
 
 const TopContent = styled.div`
@@ -173,7 +175,9 @@ const MatchSqaure = styled.div`
 
 const ShareSquare = styled.div`
   width: 100%;
-  height: 20.8rem;
+  height: 10rem;
+  align-items: center;
+  justify-content: center;
   background-color: white;
   border-radius: 0.5rem;
   margin-top: 1.7rem;
