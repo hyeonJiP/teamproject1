@@ -54,7 +54,7 @@ const results = [
     //3
     type: "ENTP",
     color: "#425994",
-    title: "디자이너님 이건 안되는데욥..",
+    title: "디자이너님 이건<br/>안되는데욥..",
     topTitle: "내 개발 자아는 ENTP!",
     bottomTitle:
       "개발자로서 당신은<br/><span>#상상력 #변화 #도전 #추진 #똑똑</span>",
@@ -156,7 +156,7 @@ const results = [
     //9
     type: "INFP",
     color: "#F08383",
-    title: "감성을 갖춘 특별한 개발자",
+    title: "감성을 갖춘<br/>특별한 개발자",
     topTitle: "내 개발 자아는 INFP!",
     bottomTitle:
       "개발자로서 당신은<br/><span>#이상 #상상 #사랑 #철벽 #감정</span>",
@@ -190,7 +190,7 @@ const results = [
     //11
     type: "INTP",
     color: "#9FB2E3",
-    title: "눈치 없지만 솔직한 개발 고수",
+    title: "눈치 없지만 솔직한<br/>개발 고수",
     topTitle: "내 개발 자아는 INTP!",
     bottomTitle:
       "개발자로서 당신은<br/><span>#호불호 #전략 #비평 #솔직 #생각</span>",
@@ -241,7 +241,7 @@ const results = [
     //14
     type: "ISTJ",
     color: "#99D6D6",
-    title: "인정받고 싶은 모태 개발자",
+    title: "인정받고 싶은<br/>모태 개발자",
     topTitle: "내 개발 자아는 ISTJ!",
     bottomTitle:
       "개발자로서 당신은<br/><span>#끈기 #도전 #성취 #인정 #안정</span>",
@@ -258,7 +258,7 @@ const results = [
     //15
     type: "ISTP",
     color: "#FEC0C0",
-    title: "인정받고 싶은 모태 개발자",
+    title: "인정받고 싶은<br/>모태 개발자",
     topTitle: "내 개발 자아는 ISTP!",
     bottomTitle:
       "개발자로서 당신은<br/><span>#끈기 #도전 #성취 #인정 #안정</span>",
