@@ -8,10 +8,10 @@ const UserNum = () => {
   const docRef = doc(dbFirestore, "Users", "user");
   const docsnap = getDoc(docRef);
   useEffect(() => {
-    docsnap.then(Data => {
-      const abc = Data.data().userNum;
-      // setNum(userNum => userNum + 1);
-      setNum(Data.data().userNum);
+    // here의 값을 결과값으로 변경하면 되는 것 같음
+    docsnap.then(here => {
+      const abc = here.data().userNum;
+      setNum(here.data().userNum);
       console.log(Num);
       updateDoc(docRef, { userNum: abc + 1 });
     });
