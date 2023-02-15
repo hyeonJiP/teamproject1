@@ -33,7 +33,7 @@ const ResultSub = styled.div`
 
 const ResultTitle = styled.div`
   font-family: "Jalnan";
-  font-size: 4.5rem;
+  font-size: 4rem;
   text-align: center;
   color: white;
   margin-top: 1.9rem;
@@ -221,7 +221,7 @@ function ResultPage() {
     <Wrapper backgroundColor={results[finalType].color}>
       <Container>
         <ResultSub>{results[finalType].topTitle}</ResultSub>
-        <ResultTitle>{results[finalType].title}</ResultTitle>
+        <ResultTitle>{Parser(results[finalType].title)}</ResultTitle>
         <ResultSquare isNormal={finalType}>
           <ResultImg isNormal={finalType} src={results[finalType].img} />
           <TopContent>{Parser(results[finalType].bottomTitle)}</TopContent>
