@@ -128,7 +128,7 @@ function QuizPage({ isShow }) {
     }
   }, [list]);
 
-  const onConditionChange = async (key) => {
+  const onConditionChange = (key) => {
     let record = contents[questionNum].answers[key].type;
 
     if (questionNum === 0 || questionNum === 1 || questionNum === 2) {
@@ -237,6 +237,14 @@ function QuizPage({ isShow }) {
   } else if (finalType === 16) {
     return (
       <div>
+        {/* <Link
+          to={{
+            pathname: { linkTo },
+            state: {
+              data1: 1,
+            },
+          }}
+        ></Link> */}
         <Link to={linkTo}></Link>
       </div>
     );

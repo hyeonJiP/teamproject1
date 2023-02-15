@@ -1,36 +1,33 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import StartButtonComponent from '../components/StartButtonComponent';
-import QuizPage from './QuizPage'
-import UserNum from './UserNum';
+import React, { useState } from "react";
+import styled from "styled-components";
+import StartButtonComponent from "../components/StartButtonComponent";
+import QuizPage from "./QuizPage";
+import UserNum from "./UserNum";
 
 const Wrapper = styled.div`
-    display: ${props => props.isShow === true ? 'flex' : 'none'};
-    background-color: pink;
-    width:100%;
-    height: 2000px;
-    background-color:white;
-    flex-direction:column;
-    align-items:center;
-
-`
+  display: ${(props) => (props.isShow === true ? "flex" : "none")};
+  width: 100%;
+  background-image: white;
+  flex-direction: column;
+  align-items: center;
+`;
 const Container = styled.div`
-    display: flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content: center;
-    border: 1px solid black;
-    width: 100%;
-    height: 1000px;
-`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0.5px solid lightgray;
+  width: 100%;
+  height: 1000px;
+`;
 const Data = styled.div`
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    width: 100%;
-    height: 500px;
-    border: 1px solid black;
-`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 500px;
+  border: 1px solid black;
+`;
 
 const DataTitle = styled.div`
   justify-content: center;
@@ -49,80 +46,82 @@ const DataNumber = styled.div`
 `;
 
 const Intro = styled.div`
-    font-size:1.4rem;
-    font-weight:400;
-    text-align:center;
-    color:#A7A7A7;
-    margin-bottom:4rem;
-`
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+  color: #a7a7a7;
+  margin-bottom: 4rem;
+`;
+
+const StartImg = styled.div`
+  width: 50rem;
+  height: 40rem;
+  background-image: url("../result-image/mbti.gif");
+`;
+
 const Title = styled.div`
-    font-family:'Jalnan';
-    font-size:4rem;
-    text-align:center;
-    color:#00462A;
-    margin-top:1.9rem;
-    margin-bottom:2rem;
-    font-family: 'Jua', sans-serif;
+  font-family: "Jalnan";
+  font-size: 4rem;
+  text-align: center;
+  color: #00462a;
+  margin-top: 1.9rem;
+  margin-bottom: 2rem;
+  font-family: "Jua", sans-serif;
+`;
 
-`
-const Footer = styled.div`
-    font-family:'Spoqa-Han-Sans';
-    font-size:1.4rem;
-    font-weight:400;
-    text-align:center;
-    margin-top:8.9rem;
-    color:#A7A7A7;
-`
 const Button = styled.div`
-    width: 29.2rem;
-    height: 7rem;
-    border-radius: 1.5rem;
-    // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: #00462A;
-    cursor:pointer;
-    margin : 1.5rem;
-    display: inline-flex;
-    font-family:'Jalnan';
-    color:white;
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items:center;
-    font-weight: 400;
-    font-size:2.0rem;
-    text-align:center;
-    border:none;
-`
-
+  width: 29.2rem;
+  height: 7rem;
+  border-radius: 1.5rem;
+  // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #00462a;
+  cursor: pointer;
+  margin: 1.5rem;
+  display: inline-flex;
+  font-family: "Jalnan";
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  font-size: 2rem;
+  text-align: center;
+  border: none;
+`;
 
 function LandingPage() {
+  const [isShow, setIsShow] = useState(true);
+  const [isQuizShow, setIsQuizShow] = useState(false);
 
-    const [isShow, setIsShow] = useState(true);
-    const [isQuizShow, setIsQuizShow] = useState(false);
+  const onClickStartBtn = () => {
+    setIsShow(false);
+    setIsQuizShow(true);
+  };
 
-    const onClickStartBtn = () => {
-        setIsShow(false);
-        setIsQuizShow(true);
-    }
-
-    return (
-        <>
-            <Wrapper isShow={isShow}>
-                <Container>
-                    <Title>나와 어울리는 개발자 유형 찾기</Title>
-                    <Intro> 내안의 개발자 본능을 찾아서...</Intro>
-                    <StartButtonComponent type={true} text={"시작하기"} onclick={onClickStartBtn}/>
-                </Container>
-                <Data>
-                    <Button>
-                        <DataTitle>참여자 수</DataTitle>
-                        <DataNumber>{UserNum()}</DataNumber>
-                    </Button>  
-                </Data>
-            </Wrapper>
-            <QuizPage isShow={isQuizShow} />
-        </>
-    );
+  return (
+    <>
+      <Wrapper isShow={isShow}>
+        <Container>
+          <Title>나와 어울리는 개발자 유형 찾기</Title>
+          <Intro> 내안의 개발자 본능을 찾아서</Intro>
+          <StartImg></StartImg>
+          <StartButtonComponent
+            type={true}
+            text={"시작하기"}
+            onclick={onClickStartBtn}
+          />
+        </Container>
+        <Data>
+          <Button>
+            <DataTitle>참여자 수</DataTitle>
+            <DataNumber>{UserNum()}</DataNumber>
+          </Button>
+        </Data>
+      </Wrapper>
+      <QuizPage isShow={isQuizShow} />
+    </>
+  );
 }
 
 export default LandingPage;
