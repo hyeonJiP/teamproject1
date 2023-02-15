@@ -8,7 +8,6 @@ const ShareBtn = styled.button`
   outline: none;
   background: none;
   border: none;
-
   margin-right: 1.6rem;
   margin-top: 1.6rem;
   margin-bottom: 1.6rem;
@@ -16,7 +15,7 @@ const ShareBtn = styled.button`
 
 const Img = styled.img``;
 
-function KaKao({ _title, _sub, _imageUrl, _finalType }) {
+function KaKao() {
   // kakao SDK import하기
   const status = useScript("https://developers.kakao.com/sdk/js/kakao.js");
   const currentUrl = window.location.href;
