@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import StartButtonComponent from '../components/StartButtonComponent';
 import QuizPage from './QuizPage'
+import UserNum from './UserNum';
 
 const Wrapper = styled.div`
     display: ${props => props.isShow === true ? 'flex' : 'none'};
@@ -106,7 +107,6 @@ function LandingPage() {
 
     return (
         <>
-
             <Wrapper isShow={isShow}>
                 <Container>
                     <Title>나와 어울리는 개발자 유형 찾기</Title>
@@ -116,7 +116,7 @@ function LandingPage() {
                 <Data>
                     <Button>
                         <DataTitle>참여자 수</DataTitle>
-                        <DataNumber>0</DataNumber>
+                        <DataNumber>{UserNum()}</DataNumber>
                     </Button>  
                 </Data>
             </Wrapper>

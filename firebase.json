@@ -1,11 +1,14 @@
 {
   "hosting": {
-    "site": "developer-7",
+    "site": "dbti-test",
     "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ]
+  },
+  "database": {
+    "rules": "database.rules.json"
   }
 }
