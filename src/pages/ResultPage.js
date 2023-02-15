@@ -8,6 +8,7 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import results from "./contents/results";
 import KakaoShareBtn from "../components/Kakao";
 import LinkCopyBtn from "../assets/btn/btn_link.svg";
+import ButtonComponent from "../components/ButtonComponent";
 
 const Wrapper = styled.div`
   display: flex;
@@ -232,18 +233,19 @@ function ResultPage() {
         <FlexLayout>
           <ShareSquare>
             <FlexLayout>
-              <KakaoShareBtn
-                _sub={results[finalType].title}
-                _title={results[finalType].name}
-                _imageUrl={results[finalType].img}
-                _finalType={finalType}
-              />
+              <KakaoShareBtn />
               <CopyToClipboard text={link}>
                 <Button onClick={alertMessage}>
                   <Img src={LinkCopyBtn} />
                 </Button>
               </CopyToClipboard>
             </FlexLayout>
+            <BtnToPage exact to="/">
+              <ButtonComponent
+                type={"result-activated"}
+                text={"테스트 다시 하기"}
+              />
+            </BtnToPage>
           </ShareSquare>
         </FlexLayout>
       </Container>
