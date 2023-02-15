@@ -214,7 +214,7 @@ function ResultPage() {
 
   const link = window.location.href;
   const alertMessage = () => {
-    alert("내 룸미 결과가 클립보드에 담겼어요!");
+    alert("내 테스트 결과가 복사되었어요!");
   };
 
   return (
