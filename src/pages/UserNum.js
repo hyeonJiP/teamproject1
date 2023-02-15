@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { dbFirestore } from "../fbase";
 import { doc, updateDoc, getDoc } from "firebase/firestore";
+import DataNumber from "./LandingPage";
 
 const UserNum = () => {
   const [Num, setNum] = useState(0);
@@ -8,10 +9,9 @@ const UserNum = () => {
   const docRef = doc(dbFirestore, "Users", "user");
   const docsnap = getDoc(docRef);
   useEffect(() => {
-    // here의 값을 결과값으로 변경하면 되는 것 같음
-    docsnap.then(here => {
-      const abc = here.data().userNum;
-      setNum(here.data().userNum);
+    docsnap.then(결과 => {
+      const abc = 결과.data().userNum;
+      setNum(결과.data().userNum);
       console.log(Num);
       updateDoc(docRef, { userNum: abc + 1 });
     });
@@ -20,6 +20,7 @@ const UserNum = () => {
     <div>
       {Num}
     </div>
+    
   );
 };
 
